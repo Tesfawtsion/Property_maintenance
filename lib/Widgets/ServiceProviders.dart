@@ -5,9 +5,16 @@ import 'package:property/Constants/Colors.dart';
 
 import '../Models/orginal.dart';
 
-class DataItem extends StatelessWidget {
+class DataItem extends StatefulWidget {
   DataItem(this.data);
   final Data data;
+
+  @override
+  State<DataItem> createState() => _DataItemState();
+}
+
+class _DataItemState extends State<DataItem> {
+  bool _isHighlighted = false;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -31,7 +38,8 @@ class DataItem extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: 3.w, vertical: 5.w),
             decoration: BoxDecoration(
                 image: DecorationImage(
-                    image: AssetImage(data.imageUrl), fit: BoxFit.fitWidth),
+                    image: AssetImage(widget.data.imageUrl),
+                    fit: BoxFit.fitWidth),
                 borderRadius: BorderRadius.circular(20.w)),
             width: 120.w,
             height: 120.w,
@@ -46,15 +54,23 @@ class DataItem extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(data.name,
+                    Text(widget.data.name,
                         style: GoogleFonts.inter(
                             fontSize: 15.sp,
                             fontWeight: FontWeight.w600,
                             color: Colors.grey.withOpacity(0.8),
                             height: 1.5)),
-                    Icon(
-                      Icons.bookmark_border_rounded,
-                      size: 25.w,
+                    GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          _isHighlighted = !_isHighlighted;
+                        });
+                      },
+                      child: Icon(
+                        Icons.bookmark_border_rounded,
+                        size: 25.w,
+                        color: _isHighlighted ? kPrimaryColor : Colors.grey,
+                      ),
                     )
                   ],
                 ),
@@ -62,11 +78,12 @@ class DataItem extends StatelessWidget {
                   height: 5.h,
                 ),
                 Text(
-                  data.jobtype,
+                  widget.data.jobtype,
                   style: GoogleFonts.inter(
                       fontSize: 16.sp,
                       fontWeight: FontWeight.bold,
-                      color: data.highLight ? kPrimaryColor : Colors.black,
+                      color:
+                          widget.data.highLight ? kPrimaryColor : Colors.black,
                       height: 1.5),
                 ),
                 SizedBox(
@@ -82,7 +99,7 @@ class DataItem extends StatelessWidget {
                           color: kPrimaryColor),
                     ),
                     Text(
-                      '${data.price}',
+                      '${widget.data.price}',
                       style: GoogleFonts.inter(
                           fontSize: 18.sp,
                           fontWeight: FontWeight.bold,

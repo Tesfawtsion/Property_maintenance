@@ -32,15 +32,15 @@ class _PagecontrolerState extends State<Pagecontroler> {
           ),
         ),
         CustomNavigationBarItem(
-          icon: Icon(Icons.book_rounded),
+          icon: const Icon(Icons.book_rounded),
           title: Text("Booking", style: GoogleFonts.inter(fontSize: 13.sp)),
         ),
         CustomNavigationBarItem(
-          icon: Icon(Icons.chat_rounded),
+          icon: const Icon(Icons.chat_rounded),
           title: Text("Chat", style: GoogleFonts.inter(fontSize: 13.sp)),
         ),
         CustomNavigationBarItem(
-          icon: Icon(Icons.person),
+          icon: const Icon(Icons.person),
           title: Text("Profile", style: GoogleFonts.inter(fontSize: 13.sp)),
         ),
       ],
@@ -56,13 +56,13 @@ class _PagecontrolerState extends State<Pagecontroler> {
   _getPage() {
     switch (_currentIndex) {
       case 0:
-        return Homepage();
+        return const Homepage();
       case 1:
-        return Booking();
+        return const Booking();
       case 2:
-        return Chat();
+        return const Chat();
       case 3:
-        return Profile();
+        return const Profile();
     }
   }
 

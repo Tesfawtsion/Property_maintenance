@@ -6,9 +6,11 @@ class Service extends StatelessWidget {
   final IconData icon;
   final Color color;
   final Color color1;
+  VoidCallback onpressed;
   final String desc;
   Service({
     Key? key,
+    required this.onpressed,
     required this.icon,
     required this.desc,
     required this.color,
@@ -17,24 +19,27 @@ class Service extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Wrap(
-      direction: Axis.vertical,
-      crossAxisAlignment: WrapCrossAlignment.center,
-      children: [
-        CircleAvatar(
-          backgroundColor: color,
-          radius: 25.sp,
-          child: Icon(
-            icon,
-            size: 25.sp,
-            color: color1,
+    return GestureDetector(
+      onTap: onpressed,
+      child: Wrap(
+        direction: Axis.vertical,
+        crossAxisAlignment: WrapCrossAlignment.center,
+        children: [
+          CircleAvatar(
+            backgroundColor: color,
+            radius: 25.sp,
+            child: Icon(
+              icon,
+              size: 25.sp,
+              color: color1,
+            ),
           ),
-        ),
-        Text(
-          desc,
-          style: GoogleFonts.inter(color: Colors.black, fontSize: 14.sp),
-        )
-      ],
+          Text(
+            desc,
+            style: GoogleFonts.inter(color: Colors.black, fontSize: 14.sp),
+          )
+        ],
+      ),
     );
   }
 }

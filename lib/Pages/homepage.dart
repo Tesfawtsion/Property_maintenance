@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:property/Pages/More.dart';
 import '../Widgets/Category_list.dart';
 import '../Widgets/headline.dart';
 import '../Widgets/headline1.dart';
@@ -77,6 +78,15 @@ class _HomepageState extends State<Homepage> {
                 Container(
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(15),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Color.fromARGB(255, 114, 152, 153)
+                              .withOpacity(0.5),
+                          spreadRadius: 3,
+                          blurRadius: 5,
+                          offset: Offset(-3, 5),
+                        ),
+                      ],
                       image: DecorationImage(
                           fit: BoxFit.fitWidth,
                           image: AssetImage('lib/images/Advert.jpg'))),
@@ -150,24 +160,28 @@ class _HomepageState extends State<Homepage> {
                 desc: 'Cleaning',
                 icon: Icons.cleaning_services_rounded,
                 color1: Color.fromARGB(255, 157, 22, 219),
+                onpressed: () {},
               ),
               Service(
                 color: Color.fromARGB(50, 252, 199, 39),
                 desc: 'Repairing',
                 icon: Icons.home_repair_service_rounded,
                 color1: Color.fromARGB(255, 252, 198, 39),
+                onpressed: () {},
               ),
               Service(
                 color: Color.fromARGB(57, 253, 169, 43),
                 desc: 'Painting',
                 icon: Icons.format_paint_rounded,
                 color1: Color.fromARGB(255, 253, 169, 43),
+                onpressed: () {},
               ),
               Service(
                 color: Color.fromARGB(52, 16, 112, 190),
                 desc: 'Laundry',
                 icon: Icons.local_laundry_service_rounded,
                 color1: Color.fromARGB(255, 16, 112, 190),
+                onpressed: () {},
               )
             ],
           ),
@@ -178,22 +192,29 @@ class _HomepageState extends State<Homepage> {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Service(
-                color: Color.fromARGB(59, 243, 51, 37),
+                color: const Color.fromARGB(59, 243, 51, 37),
                 desc: 'Plumbing',
                 icon: Icons.plumbing_rounded,
                 color1: Color.fromARGB(255, 243, 51, 37),
+                onpressed: () {},
               ),
               Service(
-                color: Color.fromARGB(59, 76, 194, 80),
+                color: const Color.fromARGB(59, 76, 194, 80),
                 desc: 'Shifting',
                 icon: Icons.local_shipping_rounded,
                 color1: Color.fromARGB(255, 76, 194, 80),
+                onpressed: () {},
               ),
               Service(
-                color: Color.fromARGB(40, 25, 7, 90),
+                color: const Color.fromARGB(40, 25, 7, 90),
                 desc: 'more',
                 icon: Icons.more_horiz_outlined,
                 color1: Color.fromARGB(255, 25, 7, 90),
+                onpressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return const More();
+                  }));
+                },
               ),
               CircleAvatar(
                 radius: 30.r,
@@ -219,7 +240,7 @@ class _HomepageState extends State<Homepage> {
           }, resturant, selected),
           SizedBox(
               width: 360.w,
-              height: 230.h,
+              height: 180.h,
               child: FoodListView(selected, (int index) {
                 setState(() {
                   selected = index;
