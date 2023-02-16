@@ -17,11 +17,11 @@ class headline1 extends StatelessWidget {
           Text(
             'Special Offers',
             style:
-                GoogleFonts.inter(fontSize: 15.sp, fontWeight: FontWeight.w700),
+                GoogleFonts.inter(fontSize: 13.sp, fontWeight: FontWeight.w700),
           ),
           Text('See All',
               style: GoogleFonts.inter(
-                  fontSize: 14.sp,
+                  fontSize: 12.sp,
                   fontWeight: FontWeight.w600,
                   color: Color.fromARGB(255, 21, 24, 202)))
         ],

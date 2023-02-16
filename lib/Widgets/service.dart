@@ -36,7 +36,7 @@ class Service extends StatelessWidget {
           ),
           Text(
             desc,
-            style: GoogleFonts.inter(color: Colors.black, fontSize: 14.sp),
+            style: GoogleFonts.inter(color: Colors.black, fontSize: 12.sp),
           )
         ],
       ),

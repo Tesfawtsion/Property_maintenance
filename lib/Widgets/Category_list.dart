@@ -13,28 +13,30 @@ class FoodList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final category = resturant.menu.keys.toList();
-    return Container(
-      padding: EdgeInsets.symmetric(vertical: 11.w),
-      height: 60.w,
+    return SizedBox(
+      height: 30.w,
       child: ListView.separated(
           scrollDirection: Axis.horizontal,
           padding: EdgeInsets.symmetric(horizontal: 10.w),
           itemBuilder: ((context, index) => GestureDetector(
                 onTap: () => callBack(index),
                 child: Container(
-                  padding:
-                      EdgeInsets.symmetric(horizontal: 12.w, vertical: 8.w),
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 16.w,
+                  ),
                   decoration: BoxDecoration(
                       border: Border.all(color: kPrimaryColor),
-                      borderRadius: BorderRadius.circular(15),
+                      borderRadius: BorderRadius.circular(10),
                       color: selected == index ? kPrimaryColor : Colors.white),
-                  child: Text(
-                    category[index],
-                    style: GoogleFonts.inter(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 14.sp,
-                        color:
-                            selected == index ? Colors.white : kPrimaryColor),
+                  child: Center(
+                    child: Text(
+                      category[index],
+                      style: GoogleFonts.inter(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 12.sp,
+                          color:
+                              selected == index ? Colors.white : kPrimaryColor),
+                    ),
                   ),
                 ),
               )),

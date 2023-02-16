@@ -18,7 +18,7 @@ class _PagecontrolerState extends State<Pagecontroler> {
   var _currentIndex = 0;
   Widget _buildTitle() {
     return CustomNavigationBar(
-      iconSize: 25.sp,
+      iconSize: 24.sp,
       selectedColor: Color.fromARGB(255, 62, 38, 136),
       strokeColor: Color(0x30040307),
       unSelectedColor: Color.fromARGB(255, 214, 210, 210),
@@ -28,20 +28,20 @@ class _PagecontrolerState extends State<Pagecontroler> {
           icon: Icon(Icons.home),
           title: Text(
             "Home",
-            style: GoogleFonts.inter(fontSize: 13.sp),
+            style: GoogleFonts.inter(fontSize: 11.sp),
           ),
         ),
         CustomNavigationBarItem(
           icon: const Icon(Icons.book_rounded),
-          title: Text("Booking", style: GoogleFonts.inter(fontSize: 13.sp)),
+          title: Text("Booking", style: GoogleFonts.inter(fontSize: 11.sp)),
         ),
         CustomNavigationBarItem(
           icon: const Icon(Icons.chat_rounded),
-          title: Text("Chat", style: GoogleFonts.inter(fontSize: 13.sp)),
+          title: Text("Chat", style: GoogleFonts.inter(fontSize: 11.sp)),
         ),
         CustomNavigationBarItem(
           icon: const Icon(Icons.person),
-          title: Text("Profile", style: GoogleFonts.inter(fontSize: 13.sp)),
+          title: Text("Profile", style: GoogleFonts.inter(fontSize: 11.sp)),
         ),
       ],
       currentIndex: _currentIndex,
@@ -70,6 +70,7 @@ class _PagecontrolerState extends State<Pagecontroler> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+          extendBody: true,
           bottomNavigationBar: _buildTitle(),
           backgroundColor: Colors.white,
           body: _getPage()),
