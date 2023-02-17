@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:property/ServicePages/Cleaning.dart';
+import 'package:property/Widgets/headwidget.dart';
 
 import '../Widgets/service.dart';
 
@@ -79,13 +81,29 @@ class More extends StatelessWidget {
                   onpressed: () {},
                 ),
                 Service(
-                    onpressed: () {},
+                    onpressed: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) {
+                        return const Cleaning(
+                          title: "Electronics",
+                          selected: 8,
+                        );
+                      }));
+                    },
                     icon: AntIcons.customerServiceFilled,
                     desc: 'Electronics',
                     color: Color.fromARGB(75, 250, 230, 48),
                     color1: Color.fromARGB(255, 250, 230, 48)),
                 Service(
-                    onpressed: () {},
+                    onpressed: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) {
+                        return const Cleaning(
+                          title: "Vehicle",
+                          selected: 7,
+                        );
+                      }));
+                    },
                     icon: AntIcons.carTwotone,
                     desc: 'Vehicle',
                     color: Color.fromARGB(75, 250, 230, 48),
@@ -101,7 +119,15 @@ class More extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Service(
-                      onpressed: () {},
+                      onpressed: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) {
+                          return const Cleaning(
+                            title: "Beauty",
+                            selected: 9,
+                          );
+                        }));
+                      },
                       icon: Icons.brush_outlined,
                       desc: 'Beauty',
                       color: Color.fromARGB(75, 250, 48, 199),
@@ -110,7 +136,15 @@ class More extends StatelessWidget {
                     width: 4.w,
                   ),
                   Service(
-                      onpressed: () {},
+                      onpressed: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) {
+                          return const Cleaning(
+                            title: "Ac Repair",
+                            selected: 10,
+                          );
+                        }));
+                      },
                       icon: Icons.ac_unit_rounded,
                       desc: 'Ac Repair',
                       color: Color.fromARGB(71, 39, 221, 253),
@@ -119,7 +153,15 @@ class More extends StatelessWidget {
                     width: 4.w,
                   ),
                   Service(
-                      onpressed: () {},
+                      onpressed: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) {
+                          return const Cleaning(
+                            title: "Ferniture repair",
+                            selected: 11,
+                          );
+                        }));
+                      },
                       icon: Icons.door_sliding_rounded,
                       desc: 'Ferniture repair',
                       color: Color.fromARGB(80, 180, 131, 25),
@@ -137,66 +179,3 @@ class More extends StatelessWidget {
     );
   }
 }
-
-class HeadWideget extends StatelessWidget {
-  final String text;
-  VoidCallback onpressed;
-  HeadWideget({
-    Key? key,
-    required this.onpressed,
-    required this.text,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 5.w, vertical: 8.w),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          GestureDetector(
-            onTap: onpressed,
-            child: Icon(
-              Icons.arrow_back_rounded,
-              size: 26.sp,
-            ),
-          ),
-          Text(
-            text,
-            style:
-                GoogleFonts.inter(fontSize: 16.sp, fontWeight: FontWeight.w600),
-          ),
-          SizedBox(
-            width: 200.w,
-          ),
-          Container(
-            padding: EdgeInsets.symmetric(vertical: 2.w, horizontal: 2.w),
-            decoration: BoxDecoration(
-                border: Border.all(), borderRadius: BorderRadius.circular(100)),
-            child: Icon(
-              Icons.more_horiz_rounded,
-              size: 20.sp,
-            ),
-          )
-        ],
-      ),
-    );
-  }
-}
-//  Container(
-//               margin: EdgeInsets.symmetric(vertical: 8.w, horizontal: 10.w),
-//               width: 340.w,
-//               height: 120.w,
-//               decoration: BoxDecoration(
-//                 borderRadius: BorderRadius.circular(20),
-//                 color: Colors.white,
-//                 boxShadow: [
-//                   BoxShadow(
-//                     color: Color.fromARGB(255, 231, 229, 229).withOpacity(0.5),
-//                     spreadRadius: 3,
-//                     blurRadius: 5,
-//                     offset: Offset(0, 3),
-//                   ),
-//                 ],
-//               ),
-//             )

@@ -6,6 +6,7 @@ import 'package:property/Pages/booking.dart';
 import 'package:property/Pages/chat.dart';
 import 'package:property/Pages/homepage.dart';
 import 'package:property/Pages/profile.dart';
+import 'package:property/ServicePages/Cleaning.dart';
 
 class Pagecontroler extends StatefulWidget {
   const Pagecontroler({super.key});

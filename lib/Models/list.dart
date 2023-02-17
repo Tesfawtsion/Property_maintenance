@@ -5,10 +5,18 @@ class Resturant {
   Resturant(this.menu);
   static Resturant generatResturant() {
     return Resturant({
-      'All': Data.generatRecommendedDatas(),
-      'Cleaning': Data.generatPopularData(),
-      'Repairing': [],
-      'Painting': [],
+      'All': Data.generatAllDatas(),
+      'Cleaning': Data.generatCleaningData(),
+      'Repairing': Data.generatRepairingData(),
+      'Painting': Data.generatpaintingData(),
+      'Laundary': Data.generatLaundaryData(),
+      'Plumbing': Data.generatPlumbingyData(),
+      'Shifting': Data.generatShiftingData(),
+      'Vehicle': Data.generatVehicleyData(),
+      'Electronics': Data.generatElectronicsData(),
+      'Beauty': Data.generatBeautyData(),
+      'Ac Repair': Data.generatAcRepairData(),
+      'Ferniture repair': Data.generatFurnitureData(),
     });
   }
 }

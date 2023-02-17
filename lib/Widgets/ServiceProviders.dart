@@ -19,9 +19,9 @@ class _DataItemState extends State<DataItem> {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 7.w),
-      height: 150.w,
+      height: 140.w,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20),
+        borderRadius: BorderRadius.circular(15),
         color: Colors.white,
         boxShadow: [
           BoxShadow(
@@ -35,7 +35,7 @@ class _DataItemState extends State<DataItem> {
       child: Row(
         children: [
           Container(
-            padding: EdgeInsets.symmetric(horizontal: 3.w, vertical: 5.w),
+            padding: EdgeInsets.symmetric(horizontal: 3.w, vertical: 3.w),
             decoration: BoxDecoration(
                 image: DecorationImage(
                     image: AssetImage(widget.data.imageUrl),
@@ -56,7 +56,7 @@ class _DataItemState extends State<DataItem> {
                   children: [
                     Text(widget.data.name,
                         style: GoogleFonts.inter(
-                            fontSize: 15.sp,
+                            fontSize: 13.sp,
                             fontWeight: FontWeight.w600,
                             color: Colors.grey.withOpacity(0.8),
                             height: 1.5)),
@@ -68,40 +68,40 @@ class _DataItemState extends State<DataItem> {
                       },
                       child: Icon(
                         Icons.bookmark_border_rounded,
-                        size: 25.w,
+                        size: 24.w,
                         color: _isHighlighted ? kPrimaryColor : Colors.grey,
                       ),
                     )
                   ],
                 ),
                 SizedBox(
-                  height: 5.h,
+                  height: 3.w,
                 ),
                 Text(
                   widget.data.jobtype,
                   style: GoogleFonts.inter(
-                      fontSize: 16.sp,
+                      fontSize: 14.sp,
                       fontWeight: FontWeight.bold,
                       color:
                           widget.data.highLight ? kPrimaryColor : Colors.black,
                       height: 1.5),
                 ),
                 SizedBox(
-                  height: 10.h,
+                  height: 8.w,
                 ),
                 Row(
                   children: [
                     Text(
                       '\$',
                       style: GoogleFonts.inter(
-                          fontSize: 18.sp,
+                          fontSize: 15.sp,
                           fontWeight: FontWeight.bold,
                           color: kPrimaryColor),
                     ),
                     Text(
                       '${widget.data.price}',
                       style: GoogleFonts.inter(
-                          fontSize: 18.sp,
+                          fontSize: 15.sp,
                           fontWeight: FontWeight.bold,
                           color: kPrimaryColor),
                     ),
@@ -118,13 +118,13 @@ class _DataItemState extends State<DataItem> {
                     ),
                     Text('4.5',
                         style: GoogleFonts.inter(
-                            fontSize: 13.sp, fontWeight: FontWeight.bold)),
+                            fontSize: 11.sp, fontWeight: FontWeight.bold)),
                     Text('|,',
                         style: GoogleFonts.inter(
-                            fontSize: 13.sp, fontWeight: FontWeight.bold)),
+                            fontSize: 11.sp, fontWeight: FontWeight.bold)),
                     Text('4,354 Reviews',
                         style: GoogleFonts.inter(
-                            fontSize: 13.sp, fontWeight: FontWeight.bold))
+                            fontSize: 11.sp, fontWeight: FontWeight.bold))
                   ],
                 ),
               ],
