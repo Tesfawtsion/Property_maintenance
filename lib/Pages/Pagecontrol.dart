@@ -58,7 +58,7 @@ class _PagecontrolerState extends State<Pagecontroler> {
   _getPage() {
     switch (_currentIndex) {
       case 0:
-        return const Detail();
+        return const Homepage();
       case 1:
         return const Booking();
       case 2:

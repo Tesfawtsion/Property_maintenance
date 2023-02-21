@@ -1,5 +1,4 @@
 import 'M_rating.dart';
-import 'orginal.dart';
 
 class Reting {
   Map<String, List<RatingData>> menu;

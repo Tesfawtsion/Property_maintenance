@@ -26,7 +26,7 @@ class CommentListView extends StatelessWidget {
                     child: CommentSection(
                         reting.menu[category[selected]]![index])),
                 separatorBuilder: (_, index) => SizedBox(
-                      height: 10.w,
+                      height: 12.w,
                     ),
                 itemCount: reting.menu[category[selected]]!.length))
             .toList(),

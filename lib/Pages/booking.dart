@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:property/Widgets/headwidget.dart';
 
 import '../Constants/Colors.dart';
 
@@ -84,7 +83,7 @@ class Booking extends StatelessWidget {
           body: TabBarView(
             children: [
               Column(
-                children: [
+                children: const [
                   BookingList(
                     img: AssetImage('lib/images/p1.jpg'),
                     color: Color.fromARGB(255, 76, 39, 176),
@@ -95,7 +94,7 @@ class Booking extends StatelessWidget {
                 ],
               ),
               Column(
-                children: [
+                children: const [
                   BookingList(
                     img: AssetImage('lib/images/p3.jpg'),
                     color: Colors.green,
@@ -106,7 +105,7 @@ class Booking extends StatelessWidget {
                 ],
               ),
               Column(
-                children: [
+                children: const [
                   BookingList(
                     color: Colors.red,
                     text1: 'Home Cleaning',

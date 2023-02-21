@@ -34,9 +34,6 @@ class _HomepageState extends State<Homepage> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    SizedBox(
-                      width: 12.w,
-                    ),
                     CircleAvatar(
                       radius: 22.w,
                       backgroundImage: AssetImage('lib/images/p2.jpg'),
@@ -59,7 +56,7 @@ class _HomepageState extends State<Homepage> {
                       ],
                     ),
                     SizedBox(
-                      width: 140.w,
+                      width: 155.w,
                     ),
                     Icon(
                       Icons.notification_add_outlined,
@@ -92,7 +89,7 @@ class _HomepageState extends State<Homepage> {
                   headline1(),
                   SizedBox(
                     width: double.infinity,
-                    height: 180.w,
+                    height: 160.w,
                     child: SingleChildScrollView(
                       scrollDirection: Axis.horizontal,
                       child: Row(
@@ -118,7 +115,7 @@ class _HomepageState extends State<Homepage> {
                             smtext1: 'for every order today',
                           ),
                           SizedBox(
-                            width: 15.w,
+                            width: 10.w,
                           ),
                         ],
                       ),
@@ -130,6 +127,7 @@ class _HomepageState extends State<Homepage> {
           ];
         },
         body: Scaffold(
+          resizeToAvoidBottomInset: false,
           body: Column(
             children: [
               SizedBox(
@@ -289,7 +287,7 @@ class _HomepageState extends State<Homepage> {
               ),
               SizedBox(
                   width: 360.w,
-                  height: 417.h,
+                  height: 470.w,
                   child: FoodListView(selected, (int index) {
                     setState(() {
                       selected = index;

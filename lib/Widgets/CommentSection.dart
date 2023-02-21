@@ -17,87 +17,97 @@ class CommentSection extends StatefulWidget {
 class _CommentSectionState extends State<CommentSection> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Column(children: [
-        Row(
-          children: [
-            CircleAvatar(
-              backgroundImage: AssetImage(widget.rdata.imageUrl),
-            ),
-            Text(widget.rdata.name),
-            Container(
-              padding: EdgeInsets.symmetric(
-                horizontal: 16.w,
+    return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+      Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          SizedBox(
+            width: 1.w,
+          ),
+          CircleAvatar(
+            backgroundImage: AssetImage(widget.rdata.imageUrl),
+            radius: 24.r,
+          ),
+          Text(
+            widget.rdata.name,
+            style:
+                GoogleFonts.lato(fontSize: 17.sp, fontWeight: FontWeight.w700),
+          ),
+          SizedBox(
+            width: 55.w,
+          ),
+          Container(
+            padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 5.w),
+            decoration: BoxDecoration(
+                border: Border.all(color: kPrimaryColor),
+                borderRadius: BorderRadius.circular(20),
+                color: Colors.white),
+            child: Center(
+              child: Row(
+                children: [
+                  Icon(
+                    Icons.star,
+                    size: 15.sp,
+                    color: kPrimaryColor,
+                  ),
+                  SizedBox(
+                    width: 2.w,
+                  ),
+                  Text(
+                    '${widget.rdata.star}',
+                    style: GoogleFonts.inter(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 12.sp,
+                        color: kPrimaryColor),
+                  ),
+                ],
               ),
-              decoration: BoxDecoration(
-                  border: Border.all(color: kPrimaryColor),
-                  borderRadius: BorderRadius.circular(20),
-                  color: Colors.white),
-              child: Center(
-                child: Row(
-                  children: [
-                    Icon(
-                      Icons.star,
-                      size: 15.sp,
-                      color: kPrimaryColor,
-                    ),
-                    SizedBox(
-                      width: 2.w,
-                    ),
-                    Text(
-                      '${widget.rdata.star}',
-                      style: GoogleFonts.inter(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 12.sp,
-                          color: kPrimaryColor),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ],
-        ),
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 10.w),
-          child: SizedBox(
-            width: double.infinity,
-            child: ReadMoreText(
-              'Flutter is Google’s mobile UI open source framework to build high-quality native (super fast) interfaces for iOS and Android apps with the unified codebase.',
-              trimLines: 2,
-              style: TextStyle(
-                fontSize: 13.sp,
-                fontWeight: FontWeight.w400,
-              ),
-              colorClickableText: kPrimaryColor,
-              trimMode: TrimMode.Line,
-              trimCollapsedText: 'Show more',
-              trimExpandedText: 'Show less',
-              moreStyle: TextStyle(
-                  fontSize: 13.sp,
-                  fontWeight: FontWeight.w600,
-                  color: kPrimaryColor),
-              lessStyle: TextStyle(
-                  fontSize: 13.sp,
-                  fontWeight: FontWeight.w700,
-                  color: kPrimaryColor),
             ),
           ),
+        ],
+      ),
+      SizedBox(
+        height: 7.w,
+      ),
+      Padding(
+        padding: EdgeInsets.only(left: 23.sp),
+        child: Text(
+          widget.rdata.desc,
+          style: GoogleFonts.lato(fontSize: 13.sp),
         ),
-        Row(
-          children: [
-            Icon(
-              Icons.favorite,
-              size: 26.sp,
-              color: Colors.red,
-            ),
-            Text('${widget.rdata.reaction}'),
-            SizedBox(
-              width: 20.w,
-            ),
-            Text(widget.rdata.week),
-          ],
-        )
-      ]),
-    );
+      ),
+      SizedBox(
+        height: 5.w,
+      ),
+      Row(
+        children: [
+          SizedBox(
+            width: 15.w,
+          ),
+          Icon(
+            Icons.favorite,
+            size: 26.sp,
+            color: Colors.red,
+          ),
+          SizedBox(
+            width: 5.w,
+          ),
+          Text(
+            '${widget.rdata.reaction}',
+            style: TextStyle(fontWeight: FontWeight.w600, fontSize: 12.sp),
+          ),
+          SizedBox(
+            width: 30.w,
+          ),
+          Text(
+            widget.rdata.week,
+            style: TextStyle(
+                fontWeight: FontWeight.w500,
+                fontSize: 12.sp,
+                color: Colors.grey.withOpacity(0.8)),
+          ),
+        ],
+      )
+    ]);
   }
 }

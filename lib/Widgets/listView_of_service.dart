@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:property/Models/list.dart';
+import 'package:property/Pages/Detail.dart';
 import 'package:property/Widgets/ServiceProviders.dart';
 
 class FoodListView extends StatelessWidget {
@@ -22,7 +23,12 @@ class FoodListView extends StatelessWidget {
         children: category
             .map((e) => ListView.separated(
                 itemBuilder: (context, index) => GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) {
+                        return const Detail();
+                      }));
+                    },
                     child:
                         DataItem(resturant.menu[category[selected]]![index])),
                 separatorBuilder: (_, index) => SizedBox(
