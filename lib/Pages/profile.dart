@@ -15,32 +15,35 @@ class Profile extends StatelessWidget {
         body: Column(
           children: [
             SizedBox(
-              height: 15.w,
+              height: 20.w,
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Text(
-                  'Profile',
-                  style: GoogleFonts.lato(
-                      fontSize: 15.sp,
-                      fontWeight: FontWeight.w700,
-                      height: 1.3),
-                ),
-                SizedBox(
-                  width: 150.w,
-                ),
-                Container(
-                  padding: EdgeInsets.symmetric(vertical: 2.w, horizontal: 2.w),
-                  decoration: BoxDecoration(
-                      border: Border.all(),
-                      borderRadius: BorderRadius.circular(100)),
-                  child: Icon(
-                    Icons.more_horiz_rounded,
-                    size: 20.sp,
+            Padding(
+              padding: EdgeInsets.symmetric(
+                horizontal: 20.w,
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'Profile',
+                    style: GoogleFonts.lato(
+                        fontSize: 16.sp,
+                        fontWeight: FontWeight.w700,
+                        height: 1.3),
                   ),
-                )
-              ],
+                  Container(
+                    padding:
+                        EdgeInsets.symmetric(vertical: 2.w, horizontal: 2.w),
+                    decoration: BoxDecoration(
+                        border: Border.all(),
+                        borderRadius: BorderRadius.circular(100)),
+                    child: Icon(
+                      Icons.more_horiz_rounded,
+                      size: 20.sp,
+                    ),
+                  )
+                ],
+              ),
             ),
             SizedBox(
               height: 40.w,
@@ -78,7 +81,7 @@ class Profile extends StatelessWidget {
                 Text(
                   'Bethelihem Mengesha',
                   style: GoogleFonts.lato(
-                      fontSize: 15.sp,
+                      fontSize: 16.sp,
                       fontWeight: FontWeight.w600,
                       height: 1.4.sp),
                 ),
@@ -103,7 +106,7 @@ class Profile extends StatelessWidget {
               ontap: () {},
             ),
             SizedBox(
-              height: 15.w,
+              height: 20.w,
             ),
             proList(
               icon: Icons.notifications_active_outlined,
@@ -111,7 +114,7 @@ class Profile extends StatelessWidget {
               ontap: () {},
             ),
             SizedBox(
-              height: 15.w,
+              height: 20.w,
             ),
             proList(
               icon: Icons.payment_outlined,
@@ -119,7 +122,7 @@ class Profile extends StatelessWidget {
               ontap: () {},
             ),
             SizedBox(
-              height: 15.w,
+              height: 20.w,
             ),
             proList(
               icon: Icons.security_outlined,
@@ -127,7 +130,7 @@ class Profile extends StatelessWidget {
               ontap: () {},
             ),
             SizedBox(
-              height: 15.w,
+              height: 20.w,
             ),
             proList(
               icon: Icons.language,
@@ -135,7 +138,7 @@ class Profile extends StatelessWidget {
               ontap: () {},
             ),
             SizedBox(
-              height: 15.w,
+              height: 20.w,
             ),
             proList(
               icon: Icons.privacy_tip_rounded,
@@ -143,7 +146,7 @@ class Profile extends StatelessWidget {
               ontap: () {},
             ),
             SizedBox(
-              height: 15.w,
+              height: 20.w,
             ),
             proList(
               icon: Icons.help_outline_sharp,
@@ -151,7 +154,7 @@ class Profile extends StatelessWidget {
               ontap: () {},
             ),
             SizedBox(
-              height: 15.w,
+              height: 20.w,
             ),
             proList(
               icon: Icons.groups_outlined,
@@ -159,7 +162,7 @@ class Profile extends StatelessWidget {
               ontap: () {},
             ),
             SizedBox(
-              height: 15.w,
+              height: 20.w,
             ),
             proList(
               icon: Icons.help_outline_sharp,
@@ -187,7 +190,7 @@ class proList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 15.w),
+      padding: EdgeInsets.symmetric(horizontal: 20.w),
       child: GestureDetector(
         onDoubleTap: ontap,
         child: Row(
