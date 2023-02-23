@@ -1,8 +1,6 @@
 import 'package:antdesign_icons/antdesign_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:property/ServicePages/Cleaning.dart';
 import 'package:property/Widgets/headwidget.dart';
 
@@ -35,28 +33,60 @@ class More extends StatelessWidget {
                   desc: 'Cleaning',
                   icon: Icons.cleaning_services_rounded,
                   color1: Color.fromARGB(255, 157, 22, 219),
-                  onpressed: () {},
+                  onpressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return const Cleaning(
+                        title: "Cleaning",
+                        selected: 1,
+                      );
+                    }));
+                  },
                 ),
                 Service(
-                  color: Color.fromARGB(50, 252, 199, 39),
+                  color: const Color.fromARGB(50, 252, 199, 39),
                   desc: 'Repairing',
                   icon: Icons.home_repair_service_rounded,
-                  color1: Color.fromARGB(255, 252, 198, 39),
-                  onpressed: () {},
+                  color1: const Color.fromARGB(255, 252, 198, 39),
+                  onpressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return const Cleaning(
+                        title: "Repairing",
+                        selected: 2,
+                      );
+                    }));
+                  },
                 ),
                 Service(
                   color: Color.fromARGB(57, 253, 169, 43),
                   desc: 'Painting',
                   icon: Icons.format_paint_rounded,
                   color1: Color.fromARGB(255, 253, 169, 43),
-                  onpressed: () {},
+                  onpressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return const Cleaning(
+                        title: "Painting",
+                        selected: 3,
+                      );
+                    }));
+                  },
                 ),
                 Service(
                   color: Color.fromARGB(52, 16, 112, 190),
                   desc: 'Laundry',
                   icon: Icons.local_laundry_service_rounded,
                   color1: Color.fromARGB(255, 16, 112, 190),
-                  onpressed: () {},
+                  onpressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return const Cleaning(
+                        title: "Laundry",
+                        selected: 4,
+                      );
+                    }));
+                  },
                 )
               ],
             ),
@@ -71,14 +101,30 @@ class More extends StatelessWidget {
                   desc: 'Plumbing',
                   icon: Icons.plumbing_rounded,
                   color1: Color.fromARGB(255, 243, 51, 37),
-                  onpressed: () {},
+                  onpressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return const Cleaning(
+                        title: "Plumbing",
+                        selected: 5,
+                      );
+                    }));
+                  },
                 ),
                 Service(
                   color: const Color.fromARGB(59, 76, 194, 80),
                   desc: 'Shifting',
                   icon: Icons.local_shipping_rounded,
                   color1: Color.fromARGB(255, 76, 194, 80),
-                  onpressed: () {},
+                  onpressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return const Cleaning(
+                        title: "Shifting",
+                        selected: 6,
+                      );
+                    }));
+                  },
                 ),
                 Service(
                     onpressed: () {

@@ -10,7 +10,7 @@ class Data {
       {this.highLight = false});
   static List<Data> generatAllDatas() {
     return [
-      Data('lib/images/p5.jpg', 'House Cleaning', 'Yacob Tefaye', 4.8, 12,
+      Data('lib/images/p2.jpg', 'House Cleaning', 'Yacob Tefaye', 4.8, 12,
           highLight: true),
       Data(
         'lib/images/p1.jpg',

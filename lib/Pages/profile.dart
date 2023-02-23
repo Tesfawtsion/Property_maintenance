@@ -1,9 +1,13 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:property/Constants/Colors.dart';
 import 'package:property/Widgets/headline.dart';
 import 'package:property/Widgets/headline1.dart';
+import 'package:property/Widgets/switch.dart';
+
+import '../Widgets/notswitch.dart';
 
 class Profile extends StatelessWidget {
   const Profile({super.key});
@@ -12,164 +16,203 @@ class Profile extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        body: Column(
-          children: [
-            SizedBox(
-              height: 20.w,
-            ),
-            Padding(
-              padding: EdgeInsets.symmetric(
-                horizontal: 20.w,
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              SizedBox(
+                height: 20.w,
               ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              Padding(
+                padding: EdgeInsets.symmetric(
+                  horizontal: 20.w,
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      'Profile',
+                      style: GoogleFonts.lato(
+                          fontSize: 16.sp,
+                          fontWeight: FontWeight.w700,
+                          height: 1.3),
+                    ),
+                    Container(
+                      padding:
+                          EdgeInsets.symmetric(vertical: 2.w, horizontal: 2.w),
+                      decoration: BoxDecoration(
+                          border: Border.all(),
+                          borderRadius: BorderRadius.circular(100)),
+                      child: Icon(
+                        Icons.more_horiz_rounded,
+                        size: 20.sp,
+                      ),
+                    )
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: 40.w,
+              ),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
+                  Stack(children: [
+                    CircleAvatar(
+                      backgroundImage: AssetImage(
+                        'lib/images/p2.jpg',
+                      ),
+                      radius: 50.sp,
+                    ),
+                    Positioned(
+                        top: 75.w,
+                        left: 75.w,
+                        child: Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(7),
+                            color: kPrimaryColor,
+                          ),
+                          padding: EdgeInsets.symmetric(
+                              horizontal: 2.w, vertical: 2.w),
+                          child: Center(
+                            child: Icon(
+                              Icons.edit,
+                              size: 20.sp,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ))
+                  ]),
                   Text(
-                    'Profile',
+                    'Bethelihem Mengesha',
                     style: GoogleFonts.lato(
                         fontSize: 16.sp,
-                        fontWeight: FontWeight.w700,
-                        height: 1.3),
+                        fontWeight: FontWeight.w600,
+                        height: 1.4.sp),
                   ),
-                  Container(
-                    padding:
-                        EdgeInsets.symmetric(vertical: 2.w, horizontal: 2.w),
-                    decoration: BoxDecoration(
-                        border: Border.all(),
-                        borderRadius: BorderRadius.circular(100)),
-                    child: Icon(
-                      Icons.more_horiz_rounded,
-                      size: 20.sp,
-                    ),
-                  )
+                  Text(
+                    'Bety2022@gmail.com',
+                    style: GoogleFonts.lato(
+                        fontSize: 12.sp,
+                        fontWeight: FontWeight.w400,
+                        height: 1.4.sp),
+                  ),
                 ],
               ),
-            ),
-            SizedBox(
-              height: 40.w,
-            ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Stack(children: [
-                  CircleAvatar(
-                    backgroundImage: AssetImage(
-                      'lib/images/p2.jpg',
-                    ),
-                    radius: 50.sp,
-                  ),
-                  Positioned(
-                      top: 75.w,
-                      left: 75.w,
-                      child: Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(7),
-                          color: kPrimaryColor,
-                        ),
-                        padding: EdgeInsets.symmetric(
-                            horizontal: 2.w, vertical: 2.w),
-                        child: Center(
-                          child: Icon(
-                            Icons.edit,
-                            size: 20.sp,
-                            color: Colors.white,
-                          ),
-                        ),
-                      ))
-                ]),
-                Text(
-                  'Bethelihem Mengesha',
-                  style: GoogleFonts.lato(
-                      fontSize: 16.sp,
-                      fontWeight: FontWeight.w600,
-                      height: 1.4.sp),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 25.w, vertical: 10.w),
+                child: Divider(
+                  thickness: 1.2.w,
                 ),
-                Text(
-                  'Bety2022@gmail.com',
-                  style: GoogleFonts.lato(
-                      fontSize: 12.sp,
-                      fontWeight: FontWeight.w400,
-                      height: 1.4.sp),
-                ),
-              ],
-            ),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 25.w, vertical: 10.w),
-              child: Divider(
-                thickness: 1.2.w,
               ),
-            ),
-            proList(
-              icon: Icons.person_outline_rounded,
-              text: 'Edit Profile',
-              ontap: () {},
-            ),
-            SizedBox(
-              height: 20.w,
-            ),
-            proList(
-              icon: Icons.notifications_active_outlined,
-              text: 'Notification',
-              ontap: () {},
-            ),
-            SizedBox(
-              height: 20.w,
-            ),
-            proList(
-              icon: Icons.payment_outlined,
-              text: 'Payment',
-              ontap: () {},
-            ),
-            SizedBox(
-              height: 20.w,
-            ),
-            proList(
-              icon: Icons.security_outlined,
-              text: 'Security',
-              ontap: () {},
-            ),
-            SizedBox(
-              height: 20.w,
-            ),
-            proList(
-              icon: Icons.language,
-              text: 'Language',
-              ontap: () {},
-            ),
-            SizedBox(
-              height: 20.w,
-            ),
-            proList(
-              icon: Icons.privacy_tip_rounded,
-              text: 'Privacy',
-              ontap: () {},
-            ),
-            SizedBox(
-              height: 20.w,
-            ),
-            proList(
-              icon: Icons.help_outline_sharp,
-              text: 'Help Center',
-              ontap: () {},
-            ),
-            SizedBox(
-              height: 20.w,
-            ),
-            proList(
-              icon: Icons.groups_outlined,
-              text: 'Invite friend',
-              ontap: () {},
-            ),
-            SizedBox(
-              height: 20.w,
-            ),
-            proList(
-              icon: Icons.help_outline_sharp,
-              text: 'Help Center',
-              ontap: () {},
-            ),
-          ],
+              proList(
+                icon: Icons.person_outline_rounded,
+                text: 'Edit Profile',
+                ontap: () {},
+              ),
+              SizedBox(
+                height: 20.w,
+              ),
+              proList(
+                icon: Icons.notifications_active_outlined,
+                text: 'Notification',
+                ontap: () {},
+              ),
+              SizedBox(
+                height: 20.w,
+              ),
+              proList(
+                icon: Icons.payment_outlined,
+                text: 'Payment',
+                ontap: () {},
+              ),
+              SizedBox(
+                height: 20.w,
+              ),
+              proList(
+                icon: Icons.security_outlined,
+                text: 'Security',
+                ontap: () {},
+              ),
+              SizedBox(
+                height: 20.w,
+              ),
+              proList(
+                icon: Icons.language,
+                text: 'Language',
+                ontap: () {},
+              ),
+              SizedBox(
+                height: 20.w,
+              ),
+              Notification_Switch(),
+              SizedBox(
+                height: 20.w,
+              ),
+              proList(
+                icon: Icons.privacy_tip_rounded,
+                text: 'Privacy Policy',
+                ontap: () {},
+              ),
+              SizedBox(
+                height: 20.w,
+              ),
+              proList(
+                icon: Icons.help_outline_sharp,
+                text: 'Help Center',
+                ontap: () {},
+              ),
+              SizedBox(
+                height: 20.w,
+              ),
+              proList(
+                icon: Icons.groups_outlined,
+                text: 'Invite friend',
+                ontap: () {},
+              ),
+              SizedBox(
+                height: 20.w,
+              ),
+              proList(
+                icon: Icons.help_outline_sharp,
+                text: 'Help Center',
+                ontap: () {},
+              ),
+              SizedBox(
+                height: 20.w,
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20.w),
+                child: GestureDetector(
+                  onDoubleTap: () {},
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Wrap(
+                        children: [
+                          Icon(
+                            Icons.logout,
+                            size: 24.sp,
+                            color: Colors.red,
+                          ),
+                          SizedBox(
+                            width: 10.w,
+                          ),
+                          Text(
+                            'Logout',
+                            style: GoogleFonts.roboto(
+                                fontSize: 14.sp,
+                                fontWeight: FontWeight.w500,
+                                height: 1.28.w),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );

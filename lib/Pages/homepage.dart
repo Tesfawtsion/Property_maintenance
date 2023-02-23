@@ -7,9 +7,7 @@ import '../Widgets/Category_list.dart';
 import '../Widgets/headline.dart';
 import '../Widgets/headline1.dart';
 import '../Widgets/listView_of_service.dart';
-import '../Widgets/search.dart';
 import '../Widgets/service.dart';
-import 'package:property/Constants/Colors.dart';
 import 'package:property/Models/list.dart';
 
 class Homepage extends StatefulWidget {
@@ -32,46 +30,12 @@ class _HomepageState extends State<Homepage> {
               backgroundColor: Colors.white,
               actions: [
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    CircleAvatar(
-                      radius: 22.w,
-                      backgroundImage: AssetImage('lib/images/p2.jpg'),
-                    ),
-                    Wrap(
-                      direction: Axis.vertical,
-                      children: [
-                        Text(
-                          'Good Morning',
-                          style: GoogleFonts.inter(
-                              fontWeight: FontWeight.w700,
-                              fontSize: 13.sp,
-                              color: Colors.black),
-                        ),
-                        Text('Selam Abera',
-                            style: GoogleFonts.inter(
-                                fontWeight: FontWeight.w500,
-                                fontSize: 12.sp,
-                                color: Colors.grey)),
-                      ],
-                    ),
+                    propic(),
                     SizedBox(
-                      width: 155.w,
+                      width: 180.w,
                     ),
-                    Icon(
-                      Icons.notification_add_outlined,
-                      color: Colors.grey,
-                    ),
-                    SizedBox(
-                      width: 2.w,
-                    ),
-                    Icon(
-                      Icons.bookmark_add_outlined,
-                      color: Colors.grey,
-                    ),
-                    SizedBox(
-                      width: 5.w,
-                    ),
+                    icons()
                   ],
                 ),
               ],
@@ -79,7 +43,7 @@ class _HomepageState extends State<Homepage> {
               pinned: true,
               snap: false,
               excludeHeaderSemantics: true,
-              expandedHeight: 270.w,
+              expandedHeight: 248.w,
               flexibleSpace: FlexibleSpaceBar(
                   background: Column(
                 children: [
@@ -285,20 +249,85 @@ class _HomepageState extends State<Homepage> {
               SizedBox(
                 height: 10.w,
               ),
-              SizedBox(
-                  width: 360.w,
-                  height: 470.w,
-                  child: FoodListView(selected, (int index) {
-                    setState(() {
-                      selected = index;
-                    });
-                  }, pageController, resturant)),
-              SizedBox(
-                height: 10.w,
-              )
+              Expanded(
+                child: SizedBox(
+                    width: 360.w,
+                    height: 470.w,
+                    child: FoodListView(selected, (int index) {
+                      setState(() {
+                        selected = index;
+                      });
+                    }, pageController, resturant)),
+              ),
             ],
           ),
         ));
+  }
+}
+
+class icons extends StatelessWidget {
+  const icons({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        Icon(
+          Icons.notification_add_outlined,
+          color: Colors.grey,
+        ),
+        SizedBox(
+          width: 2.w,
+        ),
+        Icon(
+          Icons.bookmark_add_outlined,
+          color: Colors.grey,
+        ),
+        SizedBox(
+          width: 5.w,
+        ),
+      ],
+    );
+  }
+}
+
+class propic extends StatelessWidget {
+  const propic({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        CircleAvatar(
+          radius: 22.w,
+          backgroundImage: AssetImage('lib/images/p2.jpg'),
+        ),
+        SizedBox(
+          width: 5.w,
+        ),
+        Wrap(
+          direction: Axis.vertical,
+          children: [
+            Text(
+              'Good Morning',
+              style: GoogleFonts.inter(
+                  fontWeight: FontWeight.w700,
+                  fontSize: 13.sp,
+                  color: Colors.black),
+            ),
+            Text('Selam Abera',
+                style: GoogleFonts.inter(
+                    fontWeight: FontWeight.w500,
+                    fontSize: 12.sp,
+                    color: Colors.grey)),
+          ],
+        ),
+      ],
+    );
   }
 }
 

@@ -51,24 +51,24 @@ class _DetailState extends State<Detail> {
               ),
             ),
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              Text(
-                'House Cleaning',
-                style: GoogleFonts.roboto(
-                    fontSize: 20.sp,
-                    fontWeight: FontWeight.w700,
-                    height: 1.5.sp),
-              ),
-              SizedBox(
-                width: 45.w,
-              ),
-              Icon(
-                Icons.bookmark_border_rounded,
-                size: 24.sp,
-              ),
-            ],
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 15.w),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  'Cleaning',
+                  style: GoogleFonts.roboto(
+                      fontSize: 20.sp,
+                      fontWeight: FontWeight.w700,
+                      height: 1.5.sp),
+                ),
+                Icon(
+                  Icons.bookmark_border_rounded,
+                  size: 24.sp,
+                ),
+              ],
+            ),
           ),
           SizedBox(
             height: 10.w,
@@ -77,7 +77,7 @@ class _DetailState extends State<Detail> {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               SizedBox(
-                width: 25.w,
+                width: 15.w,
               ),
               Text(
                 'Kelly Wilsom',
@@ -108,7 +108,7 @@ class _DetailState extends State<Detail> {
           Row(
             children: [
               SizedBox(
-                width: 25.w,
+                width: 15.w,
               ),
               Container(
                 padding: EdgeInsets.symmetric(horizontal: 4.w, vertical: 4.w),
@@ -144,7 +144,7 @@ class _DetailState extends State<Detail> {
           Row(
             children: [
               SizedBox(
-                width: 25.w,
+                width: 15.w,
               ),
               Text(
                 '200 Birr',
@@ -224,24 +224,6 @@ class _DetailState extends State<Detail> {
               });
             }, pageController, reting),
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              book(
-                text: 'Message',
-                color: kBackground,
-                color2: kPrimaryColor,
-              ),
-              book(
-                text: 'Book Now',
-                color: kPrimaryColor,
-                color2: Colors.white,
-              ),
-            ],
-          ),
-          SizedBox(
-            height: 20.w,
-          )
         ],
       ),
     ));
