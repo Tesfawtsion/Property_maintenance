@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:property/Pages/More.dart';
+import 'package:property/Pages/special_offers.dart';
 import 'package:property/ServicePages/Cleaning.dart';
 import '../Widgets/Category_list.dart';
 import '../Widgets/headline.dart';
@@ -60,7 +61,14 @@ class _HomepageState extends State<Homepage> {
                   SizedBox(
                     height: 65.h,
                   ),
-                  headline1(),
+                  headline1(
+                    clicked: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) {
+                        return const SpecialOffer();
+                      }));
+                    },
+                  ),
                   SizedBox(
                     width: double.infinity,
                     height: 160.w,

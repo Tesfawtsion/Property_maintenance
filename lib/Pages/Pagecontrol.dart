@@ -2,7 +2,6 @@ import 'package:custom_navigation_bar/custom_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:property/Pages/Detail.dart';
 import 'package:property/Pages/booking.dart';
 import 'package:property/Pages/chat.dart';
 import 'package:property/Pages/homepage.dart';

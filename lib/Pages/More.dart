@@ -20,7 +20,7 @@ class More extends StatelessWidget {
               onpressed: () {
                 Navigator.pop(context);
               },
-              text: 'Notfication',
+              text: 'Services',
             ),
             SizedBox(
               height: 10.w,
