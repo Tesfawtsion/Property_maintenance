@@ -10,6 +10,8 @@ import '../Widgets/listView_of_service.dart';
 import '../Widgets/service.dart';
 import 'package:property/Models/list.dart';
 
+import 'notification_home.dart';
+
 class Homepage extends StatefulWidget {
   const Homepage({super.key});
 
@@ -33,9 +35,17 @@ class _HomepageState extends State<Homepage> {
                   children: [
                     propic(),
                     SizedBox(
-                      width: 180.w,
+                      width: 170.w,
                     ),
-                    icons()
+                    icons(
+                      pressed: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) {
+                          return HomeNotification();
+                        }));
+                      },
+                      pressed2: () {},
+                    )
                   ],
                 ),
               ],
@@ -266,24 +276,36 @@ class _HomepageState extends State<Homepage> {
 }
 
 class icons extends StatelessWidget {
+  final VoidCallback pressed;
+  final VoidCallback pressed2;
   const icons({
     Key? key,
+    required this.pressed,
+    required this.pressed2,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Icon(
-          Icons.notification_add_outlined,
-          color: Colors.grey,
+        GestureDetector(
+          onTap: pressed,
+          child: Icon(
+            Icons.notification_add_outlined,
+            color: Colors.grey,
+            size: 25.w,
+          ),
         ),
         SizedBox(
-          width: 2.w,
+          width: 5.w,
         ),
-        Icon(
-          Icons.bookmark_add_outlined,
-          color: Colors.grey,
+        GestureDetector(
+          onTap: pressed2,
+          child: Icon(
+            Icons.bookmark_add_outlined,
+            color: Colors.grey,
+            size: 25.w,
+          ),
         ),
         SizedBox(
           width: 5.w,

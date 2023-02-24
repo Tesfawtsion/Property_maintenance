@@ -7,9 +7,6 @@ import 'package:property/Pages/booking.dart';
 import 'package:property/Pages/chat.dart';
 import 'package:property/Pages/homepage.dart';
 import 'package:property/Pages/profile.dart';
-import 'package:property/Pages/profile_sub_pages/editepro.dart';
-import 'package:property/Pages/profile_sub_pages/notification.dart';
-import 'package:property/ServicePages/Cleaning.dart';
 
 class Pagecontroler extends StatefulWidget {
   const Pagecontroler({super.key});
@@ -64,7 +61,7 @@ class _PagecontrolerState extends State<Pagecontroler> {
       case 1:
         return const Booking();
       case 2:
-        return const Notification1();
+        return const Chat();
       case 3:
         return const Profile();
     }
