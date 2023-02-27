@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:property/Constants/Colors.dart';
+import 'package:property/Pages/profile_sub_pages/notification.dart';
 import 'package:property/Widgets/headline.dart';
 import 'package:property/Widgets/headline1.dart';
 import 'package:property/Widgets/switch.dart';
@@ -116,7 +117,11 @@ class Profile extends StatelessWidget {
               proList(
                 icon: Icons.notifications_active_outlined,
                 text: 'Notification',
-                ontap: () {},
+                ontap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return const Notification1();
+                  }));
+                },
               ),
               SizedBox(
                 height: 20.w,
@@ -235,7 +240,7 @@ class proList extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 20.w),
       child: GestureDetector(
-        onDoubleTap: ontap,
+        onTap: ontap,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [

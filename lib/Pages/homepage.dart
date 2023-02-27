@@ -34,7 +34,7 @@ class _HomepageState extends State<Homepage> {
               actions: [
                 Row(
                   children: [
-                    propic(),
+                    const propic(),
                     SizedBox(
                       width: 170.w,
                     ),
@@ -42,7 +42,7 @@ class _HomepageState extends State<Homepage> {
                       pressed: () {
                         Navigator.push(context,
                             MaterialPageRoute(builder: (context) {
-                          return HomeNotification();
+                          return const HomeNotification();
                         }));
                       },
                       pressed2: () {},
@@ -79,7 +79,7 @@ class _HomepageState extends State<Homepage> {
                           SizedBox(
                             width: 15.w,
                           ),
-                          Advertisement(
+                          const Advertisement(
                             boldtext: '30% Off',
                             img: AssetImage('lib/images/Advert.jpg'),
                             mdtext: 'Today Special',
@@ -89,7 +89,7 @@ class _HomepageState extends State<Homepage> {
                           SizedBox(
                             width: 15.w,
                           ),
-                          Advertisement(
+                          const Advertisement(
                             boldtext: '30% Off',
                             img: AssetImage('lib/images/Advert.jpg'),
                             mdtext: 'Today Special',
@@ -116,7 +116,7 @@ class _HomepageState extends State<Homepage> {
                 height: 10.w,
               ),
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 10.0),
+                padding: const EdgeInsets.symmetric(horizontal: 10.0),
                 child: headline(
                   textbold: 'Service',
                 ),
@@ -128,10 +128,10 @@ class _HomepageState extends State<Homepage> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Service(
-                    color: Color.fromARGB(40, 183, 98, 223),
+                    color: const Color.fromARGB(40, 183, 98, 223),
                     desc: 'Cleaning',
                     icon: Icons.cleaning_services_rounded,
-                    color1: Color.fromARGB(255, 157, 22, 219),
+                    color1: const Color.fromARGB(255, 157, 22, 219),
                     onpressed: () {
                       Navigator.push(context,
                           MaterialPageRoute(builder: (context) {
@@ -143,10 +143,10 @@ class _HomepageState extends State<Homepage> {
                     },
                   ),
                   Service(
-                    color: Color.fromARGB(50, 252, 199, 39),
+                    color: const Color.fromARGB(50, 252, 199, 39),
                     desc: 'Repairing',
                     icon: Icons.home_repair_service_rounded,
-                    color1: Color.fromARGB(255, 252, 198, 39),
+                    color1: const Color.fromARGB(255, 252, 198, 39),
                     onpressed: () {
                       Navigator.push(context,
                           MaterialPageRoute(builder: (context) {
@@ -158,10 +158,10 @@ class _HomepageState extends State<Homepage> {
                     },
                   ),
                   Service(
-                    color: Color.fromARGB(57, 253, 169, 43),
+                    color: const Color.fromARGB(57, 253, 169, 43),
                     desc: 'Painting',
                     icon: Icons.format_paint_rounded,
-                    color1: Color.fromARGB(255, 253, 169, 43),
+                    color1: const Color.fromARGB(255, 253, 169, 43),
                     onpressed: () {
                       Navigator.push(context,
                           MaterialPageRoute(builder: (context) {
@@ -173,10 +173,10 @@ class _HomepageState extends State<Homepage> {
                     },
                   ),
                   Service(
-                    color: Color.fromARGB(52, 16, 112, 190),
+                    color: const Color.fromARGB(52, 16, 112, 190),
                     desc: 'Laundry',
                     icon: Icons.local_laundry_service_rounded,
-                    color1: Color.fromARGB(255, 16, 112, 190),
+                    color1: const Color.fromARGB(255, 16, 112, 190),
                     onpressed: () {
                       Navigator.push(context,
                           MaterialPageRoute(builder: (context) {
@@ -199,7 +199,7 @@ class _HomepageState extends State<Homepage> {
                     color: const Color.fromARGB(59, 243, 51, 37),
                     desc: 'Plumbing',
                     icon: Icons.plumbing_rounded,
-                    color1: Color.fromARGB(255, 243, 51, 37),
+                    color1: const Color.fromARGB(255, 243, 51, 37),
                     onpressed: () {
                       Navigator.push(context,
                           MaterialPageRoute(builder: (context) {
@@ -214,7 +214,7 @@ class _HomepageState extends State<Homepage> {
                     color: const Color.fromARGB(59, 76, 194, 80),
                     desc: 'Shifting',
                     icon: Icons.local_shipping_rounded,
-                    color1: Color.fromARGB(255, 76, 194, 80),
+                    color1: const Color.fromARGB(255, 76, 194, 80),
                     onpressed: () {
                       Navigator.push(context,
                           MaterialPageRoute(builder: (context) {
@@ -229,7 +229,7 @@ class _HomepageState extends State<Homepage> {
                     color: const Color.fromARGB(40, 25, 7, 90),
                     desc: 'more',
                     icon: Icons.more_horiz_outlined,
-                    color1: Color.fromARGB(255, 25, 7, 90),
+                    color1: const Color.fromARGB(255, 25, 7, 90),
                     onpressed: () {
                       Navigator.push(context,
                           MaterialPageRoute(builder: (context) {
@@ -247,7 +247,7 @@ class _HomepageState extends State<Homepage> {
                 height: 15.h,
               ),
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 3.0),
+                padding: const EdgeInsets.symmetric(horizontal: 3.0),
                 child: headline(
                   textbold: 'Most Popular Service',
                 ),
@@ -283,6 +283,7 @@ class _HomepageState extends State<Homepage> {
   }
 }
 
+// ignore: camel_case_types
 class icons extends StatelessWidget {
   final VoidCallback pressed;
   final VoidCallback pressed2;
@@ -323,6 +324,7 @@ class icons extends StatelessWidget {
   }
 }
 
+// ignore: camel_case_types
 class propic extends StatelessWidget {
   const propic({
     Key? key,
@@ -334,7 +336,7 @@ class propic extends StatelessWidget {
       children: [
         CircleAvatar(
           radius: 22.w,
-          backgroundImage: AssetImage('lib/images/p2.jpg'),
+          backgroundImage: const AssetImage('lib/images/p2.jpg'),
         ),
         SizedBox(
           width: 5.w,
@@ -384,10 +386,10 @@ class Advertisement extends StatelessWidget {
           borderRadius: BorderRadius.circular(15),
           boxShadow: [
             BoxShadow(
-              color: Color.fromARGB(255, 114, 152, 153).withOpacity(0.5),
+              color: const Color.fromARGB(255, 114, 152, 153).withOpacity(0.5),
               spreadRadius: 3,
               blurRadius: 5,
-              offset: Offset(-3, 5),
+              offset: const Offset(-3, 5),
             ),
           ],
           image: DecorationImage(fit: BoxFit.fitWidth, image: img)),
