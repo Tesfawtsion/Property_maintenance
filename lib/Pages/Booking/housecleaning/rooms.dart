@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:property/Constants/Colors.dart';
+import 'package:property/Pages/Booking/housecleaning/calnder.dart';
 import 'package:property/Widgets/headwidget.dart';
 
 class Rooms extends StatefulWidget {
@@ -66,7 +67,13 @@ class _RoomsState extends State<Rooms> {
           padding: EdgeInsets.symmetric(horizontal: 10.w),
           width: 310.w,
           height: 50.w,
-          child: ContinueButton(),
+          child: ContinueButton(
+            ontap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return const Calander();
+              }));
+            },
+          ),
         )),
       ),
     );
@@ -74,24 +81,29 @@ class _RoomsState extends State<Rooms> {
 }
 
 class ContinueButton extends StatelessWidget {
+  final VoidCallback ontap;
   const ContinueButton({
     Key? key,
+    required this.ontap,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 10.w),
-      decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(30), color: kPrimaryColor),
-      width: 300.w,
-      child: Center(
-        child: Text(
-          'Continue',
-          style: GoogleFonts.inter(
-              fontSize: 16.sp,
-              fontWeight: FontWeight.w600,
-              color: Colors.white),
+    return GestureDetector(
+      onTap: ontap,
+      child: Container(
+        padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 10.w),
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(30), color: kPrimaryColor),
+        width: 300.w,
+        child: Center(
+          child: Text(
+            'Continue',
+            style: GoogleFonts.inter(
+                fontSize: 16.sp,
+                fontWeight: FontWeight.w600,
+                color: Colors.white),
+          ),
         ),
       ),
     );
