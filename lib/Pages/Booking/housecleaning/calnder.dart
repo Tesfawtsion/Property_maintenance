@@ -24,15 +24,50 @@ class _CalanderState extends State<Calander> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        appBar: AppBar(
+            leading: GestureDetector(
+              onTap: (() {
+                Navigator.pop(context);
+              }),
+              child: Icon(
+                Icons.arrow_back_rounded,
+                size: 26.sp,
+                color: Colors.black,
+              ),
+            ),
+            backgroundColor: Colors.white,
+            elevation: 0,
+            automaticallyImplyLeading: false,
+            title: Text(
+              'Booking Detail',
+              style: GoogleFonts.inter(
+                  fontSize: 16.sp,
+                  fontWeight: FontWeight.w600,
+                  color: Colors.black),
+            ),
+            actions: [
+              Padding(
+                padding: EdgeInsets.symmetric(vertical: 12.w, horizontal: 15.w),
+                child: Container(
+                  padding: EdgeInsets.symmetric(horizontal: 5.w),
+                  decoration: BoxDecoration(
+                      border: Border.all(color: Colors.grey),
+                      borderRadius: BorderRadius.circular(25)),
+                  child: Icon(
+                    Icons.more_horiz_rounded,
+                    size: 15.sp,
+                    color: Colors.black,
+                  ),
+                ),
+              )
+            ]),
         body: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              HeadWideget(
-                  onpressed: () {
-                    Navigator.pop(context);
-                  },
-                  text: 'Booking Detail'),
+              SizedBox(
+                height: 10.w,
+              ),
               Padding(
                 padding: EdgeInsets.only(left: 15.w),
                 child: Text(
@@ -86,42 +121,42 @@ class _CalanderState extends State<Calander> {
                 child: ListView(
                   scrollDirection: Axis.horizontal,
                   children: [
-                    SizedBox(width: 5.w),
+                    SizedBox(width: 10.w),
                     selectTime(
                       selected: selected,
                       clock: '12:00',
                       zone: ' AM',
                       select: () {},
                     ),
-                    SizedBox(width: 5.w),
+                    SizedBox(width: 10.w),
                     selectTime(
                       selected: selected,
                       clock: '10:00',
                       zone: ' PM',
                       select: () {},
                     ),
-                    SizedBox(width: 5.w),
+                    SizedBox(width: 10.w),
                     selectTime(
                       selected: selected,
                       clock: '2:00',
                       zone: ' AM',
                       select: () {},
                     ),
-                    SizedBox(width: 5.w),
+                    SizedBox(width: 10.w),
                     selectTime(
                       selected: selected,
                       clock: '2:00',
                       zone: ' AM',
                       select: () {},
                     ),
-                    SizedBox(width: 5.w),
+                    SizedBox(width: 10.w),
                     selectTime(
                       selected: selected,
                       clock: '2:00',
                       zone: ' AM',
                       select: () {},
                     ),
-                    SizedBox(width: 5.w),
+                    SizedBox(width: 10.w),
                     selectTime(
                       selected: selected,
                       clock: '2:00',
@@ -145,7 +180,7 @@ class _CalanderState extends State<Calander> {
                       height: 30.w,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(30),
-                          color: Color.fromARGB(255, 224, 224, 224)
+                          color: const Color.fromARGB(255, 224, 224, 224)
                               .withOpacity(0.4)),
                       child: Icon(
                         Icons.add,
