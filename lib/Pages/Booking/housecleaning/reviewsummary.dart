@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:property/Constants/Colors.dart';
+import 'package:property/Pages/Booking/housecleaning/reciept.dart';
 import 'package:property/Pages/Booking/housecleaning/rooms.dart';
 import 'package:property/Widgets/headwidget.dart';
 
@@ -163,10 +164,18 @@ class Review extends StatelessWidget {
                               ],
                             ),
                           ),
-                          Recieptcontainer(
-                            cont: kPrimaryColor,
-                            desc: 'View E-Reciept',
-                            txt: Colors.white,
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.push(context,
+                                  MaterialPageRoute(builder: (context) {
+                                return const Reciept();
+                              }));
+                            },
+                            child: Recieptcontainer(
+                              cont: kPrimaryColor,
+                              desc: 'View E-Reciept',
+                              txt: Colors.white,
+                            ),
                           ),
                           SizedBox(
                             height: 10.w,
