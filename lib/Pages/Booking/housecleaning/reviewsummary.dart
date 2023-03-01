@@ -5,6 +5,8 @@ import 'package:property/Constants/Colors.dart';
 import 'package:property/Pages/Booking/housecleaning/rooms.dart';
 import 'package:property/Widgets/headwidget.dart';
 
+import '../../notification_home.dart';
+
 class Review extends StatelessWidget {
   const Review({super.key});
 
@@ -99,13 +101,118 @@ class Review extends StatelessWidget {
           child: Center(
             child: ContinueButton(
               ontap: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return const Review();
-                }));
+                showDialog(
+                    context: context,
+                    builder: (BuildContext context) {
+                      return AlertDialog(
+                        shape: RoundedRectangleBorder(
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(15.0))),
+                        icon: Center(
+                          child: Stack(
+                            children: [
+                              CircleAvatar(
+                                  backgroundColor: Colors.transparent,
+                                  radius: 60.w,
+                                  child: Image.asset('lib/images/sm5.png')),
+                              Positioned(
+                                top: 18.w,
+                                left: 13.w,
+                                child: CircleAvatar(
+                                  radius: 40.w,
+                                  backgroundColor: kPrimaryColor,
+                                  child: Center(
+                                    child: Icon(
+                                      Icons.check_box,
+                                      color: Colors.white,
+                                      size: 30.w,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        title: Text(
+                          'Booking Successful!',
+                          style: GoogleFonts.inter(
+                              fontSize: 20.sp,
+                              fontWeight: FontWeight.bold,
+                              color: kPrimaryColor),
+                        ),
+                        actions: [
+                          Center(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Text(
+                                  'you have successfuly made payment',
+                                  style: GoogleFonts.poppins(
+                                      fontSize: 15.sp,
+                                      fontWeight: FontWeight.w600,
+                                      color: Colors.grey.withOpacity(0.8)),
+                                ),
+                                Text('and book the services',
+                                    style: GoogleFonts.poppins(
+                                        fontSize: 15.sp,
+                                        fontWeight: FontWeight.w600,
+                                        color: Colors.grey.withOpacity(0.8))),
+                                SizedBox(
+                                  height: 10.w,
+                                ),
+                              ],
+                            ),
+                          ),
+                          Recieptcontainer(
+                            cont: kPrimaryColor,
+                            desc: 'View E-Reciept',
+                            txt: Colors.white,
+                          ),
+                          SizedBox(
+                            height: 10.w,
+                          ),
+                          Recieptcontainer(
+                            cont: kBackground,
+                            desc: 'Message Workers',
+                            txt: kPrimaryColor,
+                          ),
+                          SizedBox(
+                            height: 10.w,
+                          ),
+                        ],
+                      );
+                    });
               },
             ),
           ),
         )),
+      ),
+    );
+  }
+}
+
+class Recieptcontainer extends StatelessWidget {
+  final Color cont;
+  final Color txt;
+  final String desc;
+
+  const Recieptcontainer({
+    Key? key,
+    required this.cont,
+    required this.txt,
+    required this.desc,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Container(
+        padding: EdgeInsets.symmetric(horizontal: 50.w, vertical: 15.w),
+        decoration:
+            BoxDecoration(borderRadius: BorderRadius.circular(20), color: cont),
+        child: Text(desc,
+            style: GoogleFonts.inter(
+                fontSize: 15.sp, fontWeight: FontWeight.bold, color: txt)),
       ),
     );
   }
