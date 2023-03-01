@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:property/Pages/Booking/housecleaning/payment.dart';
 import 'package:property/Pages/Booking/housecleaning/rooms.dart';
 import 'package:property/Widgets/roundedinput.dart';
 import 'package:table_calendar/table_calendar.dart';
@@ -92,13 +93,15 @@ class _CalanderState extends State<Calander> {
                   width: 330.w,
                   height: 330.w,
                   child: TableCalendar(
-                      headerStyle: HeaderStyle(
-                          formatButtonVisible: false, titleCentered: true),
-                      calendarStyle: CalendarStyle(),
-                      rowHeight: 45,
-                      focusedDay: today,
-                      firstDay: DateTime.utc(2019, 27, 2),
-                      lastDay: DateTime.utc(2033, 17, 4)),
+                    headerStyle: HeaderStyle(
+                        formatButtonVisible: false, titleCentered: true),
+                    calendarStyle: CalendarStyle(),
+                    rowHeight: 45,
+                    focusedDay: today,
+                    firstDay: DateTime.utc(2019, 27, 2),
+                    lastDay: DateTime.utc(2033, 17, 4),
+                    onDaySelected: (selectedDay, focusedDay) {},
+                  ),
                 ),
               ),
               const RooomQuantity(txt: 'Working Hours'),
@@ -206,7 +209,7 @@ class _CalanderState extends State<Calander> {
             child: ContinueButton(
               ontap: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return const Calander();
+                  return const Paymnet();
                 }));
               },
             ),
