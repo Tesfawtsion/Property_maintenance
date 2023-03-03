@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:property/Constants/Colors.dart';
+import 'package:property/Pages/profile_sub_pages/editepro.dart';
 import 'package:property/Pages/profile_sub_pages/notification.dart';
 import 'package:property/Widgets/headline.dart';
 import 'package:property/Widgets/headline1.dart';
@@ -109,7 +110,11 @@ class Profile extends StatelessWidget {
               proList(
                 icon: Icons.person_outline_rounded,
                 text: 'Edit Profile',
-                ontap: () {},
+                ontap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return EditPro();
+                  }));
+                },
               ),
               SizedBox(
                 height: 20.w,

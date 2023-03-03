@@ -34,7 +34,7 @@ class _DetailState extends State<Detail> {
             Container(
               padding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 30.w),
               width: double.infinity,
-              height: 280.w,
+              height: 300.w,
               decoration: BoxDecoration(
                   image: DecorationImage(
                       image: AssetImage('lib/images/p5.jpg'),

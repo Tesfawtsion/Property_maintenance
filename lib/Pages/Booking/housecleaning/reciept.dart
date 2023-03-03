@@ -25,7 +25,7 @@ class Reciept extends StatelessWidget {
             ),
             Container(
               width: 330.w,
-              height: 250.w,
+              height: 260.w,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10), color: Colors.white),
               child: Column(
