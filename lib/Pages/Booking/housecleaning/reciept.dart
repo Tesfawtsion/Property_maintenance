@@ -1,7 +1,9 @@
+import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:property/Pages/Booking/housecleaning/reviewsummary.dart';
+import 'package:property/Widgets/header.dart';
 import 'package:property/Widgets/headwidget.dart';
 
 import '../../../Constants/Colors.dart';
@@ -15,11 +17,23 @@ class Reciept extends StatelessWidget {
       child: Scaffold(
         body: Column(
           children: [
-            HeadWideget(
-                onpressed: () {
-                  Navigator.pop(context);
-                },
-                text: 'E-Reciept'),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 5.w),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  HeadWideget1(
+                      onpressed: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) {
+                          return const Review();
+                        }));
+                      },
+                      text: 'E-Reciept'),
+                  DropdownMenu(),
+                ],
+              ),
+            ),
             SizedBox(
               height: 20.w,
             ),
@@ -135,13 +149,67 @@ class Reciept extends StatelessWidget {
                         ),
                       ],
                     ),
-                  )
+                  ),
                 ],
               ),
             ),
           ],
         ),
       ),
+    );
+  }
+}
+
+class DropdownMenu extends StatefulWidget {
+  const DropdownMenu({Key? key}) : super(key: key);
+
+  @override
+  _DropdownMenuState createState() => _DropdownMenuState();
+}
+
+class _DropdownMenuState extends State<DropdownMenu> {
+  String? _selectedOption;
+
+  @override
+  Widget build(BuildContext context) {
+    return DropdownButton<String>(
+      borderRadius: BorderRadius.circular(20),
+      underline: SizedBox(),
+      value: _selectedOption,
+      icon: Icon(Icons.more_vert),
+      iconSize: 24,
+      elevation: 10,
+      style: TextStyle(color: Colors.black),
+      onChanged: (String? newValue) {
+        setState(() {
+          _selectedOption = newValue;
+          if (_selectedOption == 'share') {
+            // Perform share action
+          } else if (_selectedOption == 'download') {
+            // Perform download action
+          } else if (_selectedOption == 'print') {
+            // Perform print action
+          }
+        });
+      },
+      items: <String>['share', 'download', 'print']
+          .map<DropdownMenuItem<String>>((String value) {
+        return DropdownMenuItem<String>(
+          value: value,
+          child: Row(
+            children: [
+              if (value == 'share')
+                Icon(Icons.share)
+              else if (value == 'download')
+                Icon(Icons.download)
+              else if (value == 'print')
+                Icon(Icons.print),
+              SizedBox(width: 8),
+              Text(value),
+            ],
+          ),
+        );
+      }).toList(),
     );
   }
 }
