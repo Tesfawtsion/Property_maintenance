@@ -6,6 +6,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:property/Constants/Colors.dart';
 import 'package:property/Models/rating.dart';
 import 'package:property/Pages/Booking/housecleaning/rooms.dart';
+import 'package:property/Pages/homepage.dart';
 import 'package:property/Widgets/ratinglist.dart';
 import 'package:readmore/readmore.dart';
 
@@ -43,7 +44,10 @@ class _DetailState extends State<Detail> {
                 alignment: Alignment.topLeft,
                 child: GestureDetector(
                   onTap: () {
-                    Navigator.pop(context);
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return const Homepage();
+                    }));
                   },
                   child: Icon(
                     Icons.arrow_back_rounded,

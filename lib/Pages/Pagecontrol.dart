@@ -7,6 +7,7 @@ import 'package:property/Pages/booking.dart';
 import 'package:property/Pages/carrepair/carrepair.dart';
 import 'package:property/Pages/chat.dart';
 import 'package:property/Pages/homepage.dart';
+import 'package:property/Pages/plumbing/plumbing.dart';
 import 'package:property/Pages/profile.dart';
 
 class Pagecontroler extends StatefulWidget {
@@ -62,7 +63,7 @@ class _PagecontrolerState extends State<Pagecontroler> {
       case 1:
         return const Booking();
       case 2:
-        return const CarRepair();
+        return const Plumbing();
       case 3:
         return const Profile();
     }
