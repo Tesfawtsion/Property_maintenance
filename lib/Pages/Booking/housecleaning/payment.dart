@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:property/Constants/Colors.dart';
+import 'package:property/Pages/Booking/housecleaning/calnder.dart';
 import 'package:property/Pages/Booking/housecleaning/reviewsummary.dart';
 import 'package:property/Pages/Booking/housecleaning/rooms.dart';
+import 'package:property/Pages/booking.dart';
 import 'package:property/Widgets/headwidget.dart';
 
 class Paymnet extends StatelessWidget {
@@ -18,7 +20,9 @@ class Paymnet extends StatelessWidget {
           children: [
             HeadWideget(
                 onpressed: () {
-                  Navigator.pop(context);
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return Calander();
+                  }));
                 },
                 text: 'Payment Methods'),
             PaymentSelector(

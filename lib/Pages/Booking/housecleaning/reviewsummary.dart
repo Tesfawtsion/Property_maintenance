@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:property/Constants/Colors.dart';
+import 'package:property/Pages/Booking/housecleaning/payment.dart';
 import 'package:property/Pages/Booking/housecleaning/reciept.dart';
 import 'package:property/Pages/Booking/housecleaning/rooms.dart';
 import 'package:property/Widgets/headwidget.dart';
@@ -19,7 +20,9 @@ class Review extends StatelessWidget {
           children: [
             HeadWideget(
                 onpressed: () {
-                  Navigator.pop(context);
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return Paymnet();
+                  }));
                 },
                 text: 'Review Summary'),
             Container(
