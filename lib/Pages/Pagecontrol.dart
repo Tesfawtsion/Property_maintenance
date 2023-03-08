@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:property/Pages/LaundryBokking/laundryservice.dart';
 import 'package:property/Pages/booking.dart';
+import 'package:property/Pages/carrepair/carrepair.dart';
 import 'package:property/Pages/chat.dart';
 import 'package:property/Pages/homepage.dart';
 import 'package:property/Pages/profile.dart';
@@ -61,7 +62,7 @@ class _PagecontrolerState extends State<Pagecontroler> {
       case 1:
         return const Booking();
       case 2:
-        return const Laundry();
+        return const CarRepair();
       case 3:
         return const Profile();
     }

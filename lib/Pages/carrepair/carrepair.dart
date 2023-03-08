@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:property/Widgets/header.dart';
+import 'package:property/Widgets/roundinpute1.dart';
 
+import '../../Widgets/header.dart';
 import '../../Widgets/roundedinput.dart';
 
-class Laundry extends StatelessWidget {
-  const Laundry({super.key});
+class CarRepair extends StatelessWidget {
+  const CarRepair({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,14 +18,14 @@ class Laundry extends StatelessWidget {
           SizedBox(
             height: 10.w,
           ),
-          HeadWideget1(onpressed: () {}, text: 'Laundry Services'),
+          HeadWideget1(onpressed: () {}, text: 'Car Repairing'),
           SizedBox(
             height: 10.w,
           ),
           Padding(
             padding: EdgeInsets.only(left: 18.w),
             child: Text(
-              'Enter the weight and the Service you need ',
+              'Enter the type and series of the car tobe repaird ',
               style: GoogleFonts.poppins(
                 fontSize: 14.sp,
               ),
@@ -33,17 +34,9 @@ class Laundry extends StatelessWidget {
           SizedBox(
             height: 10.w,
           ),
-          RoundedInputFeild(
-            hintText: 'Kg',
-            onChanged: (String value) {},
-            text: 'Weight of Total Clothings in KG',
-          ),
-          SizedBox(
-            height: 10.w,
-          ),
           Padding(
             padding: EdgeInsets.only(left: 18.w),
-            child: Text('Ironing Service',
+            child: Text('Card Brand',
                 style: GoogleFonts.poppins(
                     fontSize: 16.sp, fontWeight: FontWeight.bold)),
           ),
@@ -52,17 +45,25 @@ class Laundry extends StatelessWidget {
           ),
           Padding(
             padding: EdgeInsets.only(left: 18.w, top: 10.w, bottom: 10.w),
-            child: YesNoSelection(),
+            child: CarBrand(),
           ),
           Padding(
             padding: EdgeInsets.only(left: 18.w),
-            child: Text('Fragrance Service',
+            child: Text('Series/Model',
                 style: GoogleFonts.poppins(
                     fontSize: 16.sp, fontWeight: FontWeight.bold)),
           ),
           Padding(
             padding: EdgeInsets.only(left: 18.w, top: 10.w, bottom: 10.w),
-            child: YesNoSelection(),
+            child: CarBrand(),
+          ),
+          SizedBox(
+            height: 10.w,
+          ),
+          RoundedInputFeild1(
+            hintText: '',
+            onChanged: (String value) {},
+            text: 'Plate Number',
           ),
         ],
       ),
@@ -70,15 +71,15 @@ class Laundry extends StatelessWidget {
   }
 }
 
-class YesNoSelection extends StatefulWidget {
+class CarBrand extends StatefulWidget {
   @override
-  _YesNoSelectionState createState() => _YesNoSelectionState();
+  _CarBrandState createState() => _CarBrandState();
 }
 
-class _YesNoSelectionState extends State<YesNoSelection> {
+class _CarBrandState extends State<CarBrand> {
   late String _selectedOption;
 
-  final List<String> _options = ['Yes', 'No'];
+  final List<String> _options = ['Ford F-Series', 'Toyota', 'lambo', 'BMW'];
 
   @override
   void initState() {
