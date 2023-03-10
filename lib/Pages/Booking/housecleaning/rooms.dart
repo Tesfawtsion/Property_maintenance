@@ -25,10 +25,7 @@ class _RoomsState extends State<Rooms> {
             children: [
               HeadWideget(
                   onpressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) {
-                      return const Detail();
-                    }));
+                    Navigator.of(context).pop();
                   },
                   text: 'House Cleaning'),
               Padding(

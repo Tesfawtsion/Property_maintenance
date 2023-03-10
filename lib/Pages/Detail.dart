@@ -9,13 +9,22 @@ import 'package:property/Pages/Booking/housecleaning/rooms.dart';
 import 'package:property/Pages/homepage.dart';
 import 'package:property/Widgets/ratinglist.dart';
 import 'package:readmore/readmore.dart';
+import '../Pages/Pagecontrol.dart' as control;
 
 import '../Widgets/listview_comment.dart';
 
 class Detail extends StatefulWidget {
-  const Detail({
-    super.key,
-  });
+  String image;
+  String jobTitle;
+  String name;
+  String price;
+  String rating;
+  Detail(
+      {required this.image,
+      required this.jobTitle,
+      required this.name,
+      required this.price,
+      required this.rating});
 
   @override
   State<Detail> createState() => _DetailState();
@@ -38,16 +47,15 @@ class _DetailState extends State<Detail> {
               height: 300.w,
               decoration: BoxDecoration(
                   image: DecorationImage(
-                      image: AssetImage('lib/images/p5.jpg'),
-                      fit: BoxFit.fill)),
+                      image: AssetImage(widget.image), fit: BoxFit.fill)),
               child: Align(
                 alignment: Alignment.topLeft,
                 child: GestureDetector(
                   onTap: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) {
-                      return const Homepage();
-                    }));
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => control.Pagecontroler()));
                   },
                   child: Icon(
                     Icons.arrow_back_rounded,
@@ -63,7 +71,7 @@ class _DetailState extends State<Detail> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    'Cleaning',
+                    widget.jobTitle,
                     style: GoogleFonts.roboto(
                         fontSize: 20.sp,
                         fontWeight: FontWeight.w700,
@@ -86,7 +94,7 @@ class _DetailState extends State<Detail> {
                   width: 15.w,
                 ),
                 Text(
-                  'Kelly Wilsom',
+                  widget.name,
                   style: GoogleFonts.lato(
                     fontSize: 18.sp,
                     fontWeight: FontWeight.w700,
@@ -98,7 +106,7 @@ class _DetailState extends State<Detail> {
                       Icons.star_half,
                       color: Colors.amber,
                     ),
-                    Text('4.5',
+                    Text(widget.rating,
                         style: GoogleFonts.inter(
                             fontSize: 11.sp, fontWeight: FontWeight.bold)),
                     Text('(4,354 Reviews)',
@@ -125,7 +133,7 @@ class _DetailState extends State<Detail> {
                       borderRadius: BorderRadius.circular(7)),
                   child: Center(
                     child: Text(
-                      'Cleaning',
+                      widget.jobTitle,
                       style: GoogleFonts.inter(
                           color: Colors.white,
                           fontSize: 12.sp,
@@ -153,7 +161,7 @@ class _DetailState extends State<Detail> {
                   width: 15.w,
                 ),
                 Text(
-                  '200 Birr',
+                  widget.price,
                   style: GoogleFonts.lato(
                       fontSize: 18.sp,
                       fontWeight: FontWeight.w700,

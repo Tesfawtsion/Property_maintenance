@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:property/Models/list.dart';
+import 'package:property/Models/orginal.dart';
 import 'package:property/Pages/Detail.dart';
 import 'package:property/Widgets/ServiceProviders.dart';
 
@@ -24,10 +25,17 @@ class FoodListView extends StatelessWidget {
             .map((e) => ListView.separated(
                 itemBuilder: (context, index) => GestureDetector(
                     onTap: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) {
-                        return const Detail();
-                      }));
+                      List<Data> _data = Data.generatAllDatas();
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => Detail(
+                                    image: _data[index].imageUrl,
+                                    jobTitle: _data[index].jobtype,
+                                    name: _data[index].name,
+                                    price: _data[index].price.toString(),
+                                    rating: _data[index].score.toString(),
+                                  )));
                     },
                     child:
                         DataItem(resturant.menu[category[selected]]![index])),
