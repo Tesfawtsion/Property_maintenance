@@ -47,7 +47,7 @@ class _DetailState extends State<Detail> {
               height: 300.w,
               decoration: BoxDecoration(
                   image: DecorationImage(
-                      image: AssetImage(widget.image), fit: BoxFit.fill)),
+                      image: AssetImage(widget.image), fit: BoxFit.cover)),
               child: Align(
                 alignment: Alignment.topLeft,
                 child: GestureDetector(
@@ -55,7 +55,8 @@ class _DetailState extends State<Detail> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => control.Pagecontroler()));
+                            builder: (context) =>
+                                const control.Pagecontroler()));
                   },
                   child: Icon(
                     Icons.arrow_back_rounded,

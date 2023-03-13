@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:intl_phone_field/intl_phone_field.dart';
 import 'package:property/Widgets/header.dart';
 
 class EditPro extends StatefulWidget {
@@ -54,16 +55,55 @@ class _EditProState extends State<EditPro> {
           SizedBox(
             height: 15.w,
           ),
-          FormField(controller: _controller3),
           RoundedDropdownContainer(
-            items: ['Option 1', 'Option 2', 'Option 3'],
+            items: ['Adis Abeba', 'Jimma', 'ArbaMinch'],
             value: _selectedOption,
             onChanged: (newValue) {
               setState(() {
                 _selectedOption = newValue;
               });
             },
-          )
+          ),
+          SizedBox(
+            height: 15.w,
+          ),
+          Container(
+            width: 320.w,
+            child: IntlPhoneField(
+              decoration: InputDecoration(
+                labelText: 'Phone Number',
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(20),
+                  borderSide: BorderSide(),
+                ),
+              ),
+              onChanged: (phone) {
+                print(phone.completeNumber);
+              },
+              onCountryChanged: (country) {
+                print('Country changed to: ' + country.name);
+              },
+            ),
+          ),
+          SizedBox(
+            height: 15.w,
+          ),
+          FormField(controller: _controller3),
+          SizedBox(
+            height: 15.w,
+          ),
+          RoundedDropdownContainer(
+            items: [
+              'Male',
+              'Female',
+            ],
+            value: _selectedOption,
+            onChanged: (newValue) {
+              setState(() {
+                _selectedOption = newValue;
+              });
+            },
+          ),
         ],
       )),
     );
