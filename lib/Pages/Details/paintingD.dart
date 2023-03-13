@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:property/Pages/plumbing/plumbing.dart';
 import 'package:readmore/readmore.dart';
 
 import '../../Constants/Colors.dart';
@@ -267,7 +268,7 @@ class _PaintingDetailState extends State<PaintingDetail> {
               color2: Colors.white,
               ontap: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return const Rooms();
+                  return const Plumbing();
                 }));
               },
             )

@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:property/Models/list.dart';
 import 'package:property/Models/orginal.dart';
 import 'package:property/Pages/Details/Detail.dart';
+import 'package:property/Pages/Details/paintingD.dart';
 import 'package:property/Widgets/ServiceProviders.dart';
 
 class FoodListView extends StatefulWidget {
@@ -35,6 +36,16 @@ class _FoodListViewState extends State<FoodListView> {
                         setState(() {
                           _data = Data.generatAllDatas();
                         });
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => Detail(
+                                      image: _data[index].imageUrl,
+                                      jobTitle: _data[index].jobtype,
+                                      name: _data[index].name,
+                                      price: _data[index].price.toString(),
+                                      rating: _data[index].score.toString(),
+                                    )));
                       } else if (widget.selected == 1) {
                         setState(() {
                           _data = Data.generatCleaningData();
@@ -47,6 +58,16 @@ class _FoodListViewState extends State<FoodListView> {
                         setState(() {
                           _data = Data.generatpaintingData();
                         });
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => PaintingDetail(
+                                      image: _data[index].imageUrl,
+                                      jobTitle: _data[index].jobtype,
+                                      name: _data[index].name,
+                                      price: _data[index].price.toString(),
+                                      rating: _data[index].score.toString(),
+                                    )));
                       } else if (widget.selected == 4) {
                         setState(() {
                           _data = Data.generatLaundaryData();
@@ -80,16 +101,6 @@ class _FoodListViewState extends State<FoodListView> {
                           _data = Data.generatFurnitureData();
                         });
                       }
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => Detail(
-                                    image: _data[index].imageUrl,
-                                    jobTitle: _data[index].jobtype,
-                                    name: _data[index].name,
-                                    price: _data[index].price.toString(),
-                                    rating: _data[index].score.toString(),
-                                  )));
                     },
                     child: DataItem(widget
                         .resturant.menu[category[widget.selected]]![index])),
