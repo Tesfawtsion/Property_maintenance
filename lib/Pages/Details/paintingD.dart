@@ -1,25 +1,28 @@
-import 'package:antdesign_icons/antdesign_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:property/Constants/Colors.dart';
-import 'package:property/Models/rating.dart';
-import 'package:property/Pages/Booking/housecleaning/rooms.dart';
-import 'package:property/Pages/homepage.dart';
-import 'package:property/Widgets/ratinglist.dart';
 import 'package:readmore/readmore.dart';
-import '../Pages/Pagecontrol.dart' as control;
 
-import '../Widgets/listview_comment.dart';
+import '../../Constants/Colors.dart';
+import '../../Models/rating.dart';
+import '../../Widgets/booknow.dart';
+import '../../Widgets/listview_comment.dart';
+import '../../Widgets/ratinglist.dart';
+import '../Booking/housecleaning/rooms.dart';
+import '../Pagecontrol.dart' as control;
 
-class Detail extends StatefulWidget {
+class PaintingDetail extends StatefulWidget {
   String image;
+
   String jobTitle;
+
   String name;
+
   String price;
+
   String rating;
-  Detail(
+
+  PaintingDetail(
       {required this.image,
       required this.jobTitle,
       required this.name,
@@ -27,13 +30,16 @@ class Detail extends StatefulWidget {
       required this.rating});
 
   @override
-  State<Detail> createState() => _DetailState();
+  State<PaintingDetail> createState() => _PaintingDetailState();
 }
 
-class _DetailState extends State<Detail> {
+class _PaintingDetailState extends State<PaintingDetail> {
   var selected = 0;
+
   final pageController = PageController();
+
   final reting = Reting.generatReting();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -267,42 +273,6 @@ class _DetailState extends State<Detail> {
             )
           ]),
         ),
-      ),
-    );
-  }
-}
-
-class book extends StatelessWidget {
-  final String text;
-  final Color color;
-  final Color color2;
-  final VoidCallback ontap;
-  const book({
-    Key? key,
-    required this.text,
-    required this.color,
-    required this.color2,
-    required this.ontap,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: ontap,
-      child: Container(
-        width: 145.w,
-        height: 55.w,
-        padding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 10.w),
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(30),
-          color: color,
-        ),
-        child: Center(
-            child: Text(
-          text,
-          style: GoogleFonts.lato(
-              fontSize: 18.sp, fontWeight: FontWeight.w700, color: color2),
-        )),
       ),
     );
   }

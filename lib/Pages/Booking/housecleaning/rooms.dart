@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:property/Constants/Colors.dart';
 import 'package:property/Pages/Booking/housecleaning/calnder.dart';
-import 'package:property/Pages/Detail.dart';
+import 'package:property/Pages/Details/Detail.dart';
 import 'package:property/Widgets/headwidget.dart';
 
 class Rooms extends StatefulWidget {
